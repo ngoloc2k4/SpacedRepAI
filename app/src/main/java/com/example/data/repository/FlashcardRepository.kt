@@ -59,8 +59,7 @@ class FlashcardRepository(
     fun getCardCountForDeck(deckId: Long): Flow<Int> = cardDao.getCardCountForDeck(deckId)
 
     suspend fun getCardById(cardId: Long): CardEntity? = withContext(Dispatchers.IO) {
-        // Query snapshot from DB
-        cardDao.getAllCardsSnapshot().firstOrNull { it.id == cardId }
+        cardDao.getCardByIdSnapshot(cardId)
     }
 
     suspend fun createCard(deckId: Long, front: String, back: String): Long = withContext(Dispatchers.IO) {

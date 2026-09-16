@@ -18,18 +18,23 @@ class ReminderNotificationReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         val app = context.applicationContext as? FlashcardApplication
         val repository = app?.repository
+        val pendingResult = goAsync()
 
         CoroutineScope(Dispatchers.IO).launch {
-            val dueCount = try {
-                val now = System.currentTimeMillis()
-                val allCards = repository?.getAllCardsSnapshot() ?: emptyList()
-                val queue = repository?.getScheduler()?.buildDailyQueue(allCards, currentTime = now)
-                queue?.totalCount ?: 0
-            } catch (e: Exception) {
-                0
-            }
+            try {
+                val dueCount = try {
+                    val now = System.currentTimeMillis()
+                    val allCards = repository?.getAllCardsSnapshot() ?: emptyList()
+                    val queue = repository?.getScheduler()?.buildDailyQueue(allCards, currentTime = now)
+                    queue?.totalCount ?: 0
+                } catch (e: Exception) {
+                    0
+                }
 
-            showNotification(context, dueCount)
+                showNotification(context, dueCount)
+            } finally {
+                pendingResult.finish()
+            }
         }
     }
 
