@@ -1,0 +1,6 @@
+{
+  "name": "SRS Flashcards",
+  "description": "Flashcard app with Spaced Repetition (SM-2) algorithm and offline-first Room database architecture",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

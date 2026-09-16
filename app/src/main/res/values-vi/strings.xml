@@ -1,0 +1,275 @@
+<resources>
+    <string name="app_name">SRS Flashcards</string>
+    <string name="app_subtitle">Thuật toán Lặp lại Ngắt quãng</string>
+
+    <!-- Navigation & Titles -->
+    <string name="nav_decks">Bộ thẻ</string>
+    <string name="nav_cards">Danh sách thẻ</string>
+    <string name="nav_review">Ôn tập</string>
+    <string name="nav_stats">Thống kê</string>
+    <string name="nav_import_export">Nhập &amp; Xuất</string>
+    <string name="nav_ai_generator">Tạo thẻ bằng AI</string>
+
+    <!-- Decks Screen -->
+    <string name="today_title">Hôm nay</string>
+    <string name="today_due">Đến hạn</string>
+    <string name="today_learning">Đang học</string>
+    <string name="today_new">Mới</string>
+    <string name="start_daily_review">Bắt đầu ôn tập</string>
+    <string name="start_daily_review_count">Bắt đầu ôn tập (%1$d)</string>
+    <string name="decks_header">Bộ thẻ</string>
+    <string name="decks_count">%1$d bộ thẻ</string>
+    <string name="cards_count">%1$d thẻ</string>
+    <string name="new_deck_dialog_title">Tạo bộ thẻ mới</string>
+    <string name="deck_name_label">Tên bộ thẻ *</string>
+    <string name="deck_name_placeholder">VD: Từ vựng tiếng Hàn N5, Thuật ngữ CNTT</string>
+    <string name="deck_desc_label">Mô tả (Không bắt buộc)</string>
+    <string name="deck_desc_placeholder">VD: Các khái niệm cốt lõi, từ vựng thông dụng</string>
+    <string name="deck_name_empty_error">Tên bộ thẻ không được để trống</string>
+    <string name="delete_deck_dialog_title">Xóa bộ thẻ</string>
+    <string name="delete_deck_confirm_msg">Bạn có chắc chắn muốn xóa \"%1$s\" cùng tất cả thẻ không?</string>
+    <string name="empty_decks_title">Chưa có bộ thẻ nào</string>
+    <string name="empty_decks_desc">Tạo bộ thẻ đầu tiên của bạn để bắt đầu học với thuật toán lặp lại ngắt quãng SM-2.</string>
+    <string name="create_first_deck">Tạo bộ thẻ đầu tiên</string>
+    <string name="create_deck">Tạo bộ thẻ</string>
+    <string name="study">Học</string>
+    <string name="review_due">Ôn tập (%1$d)</string>
+    <string name="deck_progress">Tiến độ</string>
+    <string name="cards_btn_label">Thẻ (%1$d)</string>
+
+    <!-- Cards Screen -->
+    <string name="cards_title">Danh sách thẻ</string>
+    <string name="add_card_btn">Thêm thẻ</string>
+    <string name="add_card_dialog_title">Thêm thẻ flashcard</string>
+    <string name="edit_card_dialog_title">Chỉnh sửa thẻ</string>
+    <string name="card_front_label">Mặt trước (Câu hỏi / Từ gợi nhớ) *</string>
+    <string name="card_front_placeholder">VD: Thuật ngữ đa hình trong OOP là gì?</string>
+    <string name="card_back_label">Mặt sau (Câu trả lời / Giải thích) *</string>
+    <string name="card_back_placeholder">VD: Khả năng một đối tượng có thể biểu diễn qua nhiều hình thái khác nhau</string>
+    <string name="card_front_empty_error">Mặt trước không được để trống</string>
+    <string name="card_back_empty_error">Mặt sau không được để trống</string>
+    <string name="empty_cards_title">Chưa có thẻ nào trong bộ này</string>
+    <string name="empty_cards_desc">Thêm thẻ thủ công hoặc tạo tự động bằng Gemini AI.</string>
+    <string name="add_first_card">Thêm thẻ đầu tiên</string>
+    <string name="delete_card_dialog_title">Xóa thẻ</string>
+    <string name="delete_card_confirm_msg">Bạn có chắc chắn muốn xóa thẻ này không?</string>
+    <string name="card_interval_tag">Khoảng cách: %1$d ngày</string>
+    <string name="card_ease_tag">Độ dễ: %1$.2f</string>
+    <string name="card_reps_tag">Lặp lại: %1$d</string>
+    <string name="card_meta_interval">Khoảng cách</string>
+    <string name="card_meta_reps">Lần lặp</string>
+    <string name="card_meta_ease">Độ dễ</string>
+    <string name="state_new">MỚI</string>
+    <string name="state_learning">ĐANG HỌC</string>
+    <string name="state_review">ÔN TẬP</string>
+    <string name="state_relearning">HỌC LẠI</string>
+    <string name="card_state_new">Mới</string>
+    <string name="card_state_learning">Đang học</string>
+    <string name="card_state_review">Ôn tập</string>
+    <string name="card_state_relearning">Học lại</string>
+
+    <!-- Review Screen -->
+    <string name="review_screen_title">Ôn tập</string>
+    <string name="tap_to_reveal">Chạm vào thẻ để lật đáp án</string>
+    <string name="tap_to_hide">Chạm vào thẻ để lật lại câu hỏi</string>
+    <string name="rating_again">Quên</string>
+    <string name="rating_hard">Khó</string>
+    <string name="rating_good">Nhớ</string>
+    <string name="rating_easy">Dễ</string>
+    <string name="session_completed_title">Hoàn thành phiên ôn tập!</string>
+    <string name="session_completed_msg">Bạn đã ôn %1$d thẻ trong %2$s. Lịch ôn tập tiếp theo đã được cập nhật vào cơ sở dữ liệu.</string>
+    <string name="recap_reviewed">Đã ôn</string>
+    <string name="recap_time">Thời gian</string>
+    <string name="back_to_decks">Về trang chủ</string>
+    <string name="review_again">Ôn tập lại</string>
+    <string name="type_answer_toggle">Chế độ gõ câu trả lời</string>
+    <string name="type_answer_placeholder">Nhập câu trả lời của bạn...</string>
+    <string name="evaluate_with_ai">Đánh giá câu trả lời với AI</string>
+    <string name="ai_evaluating">Gemini AI đang chấm điểm câu trả lời...</string>
+    <string name="ai_eval_result_correct">Chính xác!</string>
+    <string name="ai_eval_result_partial">Chính xác một phần</string>
+    <string name="ai_eval_result_incorrect">Chưa chính xác</string>
+    <string name="btn_ai_explain">Giải thích bằng AI</string>
+    <string name="btn_ai_mnemonic">Mẹo nhớ bằng AI</string>
+    <string name="ai_explanation_title">Giải thích từ Gemini AI</string>
+    <string name="ai_mnemonic_title">Mẹo liên tưởng ghi nhớ (Mnemonic)</string>
+
+    <!-- Statistics Screen -->
+    <string name="stats_title">Thống kê học tập</string>
+    <string name="stats_overview">Tổng quan</string>
+    <string name="stats_total_cards">Tổng số thẻ</string>
+    <string name="stats_reviews_today">Đã ôn hôm nay</string>
+    <string name="stats_reviews_week">Đã ôn tuần này</string>
+    <string name="stats_streak">Chuỗi ngày học liên tục</string>
+    <string name="stats_streak_value">%1$d ngày</string>
+    <string name="stats_total_study_time">Tổng thời gian học</string>
+    <string name="stats_srs_metrics">Chỉ số thuật toán SRS</string>
+    <string name="stats_retention_rate">Tỷ lệ ghi nhớ</string>
+    <string name="stats_avg_interval">Khoảng cách lặp trung bình</string>
+    <string name="stats_avg_interval_value">%1$.1f ngày</string>
+    <string name="stats_mature_cards">Thẻ nhớ vững (≥21 ngày)</string>
+    <string name="stats_young_cards">Thẻ mới nhớ (&lt;21 ngày)</string>
+    <string name="stats_cards_due">Thẻ cần ôn ngay</string>
+    <string name="stats_rating_breakdown">Phân bố đánh giá ôn tập</string>
+    <string name="stats_rate_again">Quên: %1$.1f%%</string>
+    <string name="stats_rate_hard">Khó: %1$.1f%%</string>
+    <string name="stats_rate_good">Nhớ: %1$.1f%%</string>
+    <string name="stats_rate_easy">Dễ: %1$.1f%%</string>
+    <string name="stats_card_states">Trạng thái thẻ</string>
+    <string name="stats_forecast">Dự báo lịch ôn sắp tới</string>
+    <string name="stats_forecast_tomorrow">Ngày mai</string>
+    <string name="stats_forecast_3d">Trong 3 ngày</string>
+    <string name="stats_forecast_7d">Trong 7 ngày</string>
+    <string name="stats_forecast_30d">Trong 30 ngày</string>
+
+    <!-- AI Generator Screen -->
+    <string name="ai_gen_title">Tạo thẻ tự động bằng AI</string>
+    <string name="ai_gen_topic_label">Chủ đề hoặc tài liệu học *</string>
+    <string name="ai_gen_topic_hint">VD: Từ vựng tiếng Nhật N5 về đồ ăn, Sự kiện lịch sử thế giới, Các mẫu thiết kế phần mềm...</string>
+    <string name="ai_gen_count_label">Số lượng thẻ cần tạo (3 - 15)</string>
+    <string name="ai_gen_language_label">Ngôn ngữ</string>
+    <string name="ai_gen_btn_generate">Tạo bằng Gemini AI</string>
+    <string name="ai_gen_loading">Gemini AI đang phân tích chủ đề và sinh flashcards...</string>
+    <string name="ai_gen_preview_title">Xem trước &amp; Chọn lọc thẻ</string>
+    <string name="ai_gen_preview_desc">Kiểm tra các thẻ được tạo. Bạn có thể bỏ chọn hoặc chỉnh sửa câu hỏi/câu trả lời trước khi lưu.</string>
+    <string name="ai_gen_save_btn">Lưu %1$d thẻ đã chọn vào bộ thẻ</string>
+    <string name="ai_gen_disclaimer">Thẻ chỉ được lưu vào thiết bị sau khi bạn xác nhận. AI có thể đưa ra kết quả tham khảo.</string>
+    <string name="ai_gen_select_all">Chọn tất cả</string>
+    <string name="ai_gen_deselect_all">Bỏ chọn tất cả</string>
+    <string name="ai_gen_select_deck">Lưu vào bộ: %1$s</string>
+    <string name="ai_gen_success">Đã thêm %1$d thẻ vào bộ thẻ!</string>
+
+    <!-- Import / Export Screen -->
+    <string name="io_title">Nhập &amp; Xuất dữ liệu</string>
+    <string name="io_export_section">Xuất dữ liệu Flashcards</string>
+    <string name="io_export_desc">Sao lưu bộ thẻ và danh sách thẻ sang định dạng JSON chuẩn (.spaced.json).</string>
+    <string name="io_export_all_btn">Xuất tất cả bộ thẻ (%1$d)</string>
+    <string name="io_export_single_btn">Xuất bộ thẻ này</string>
+    <string name="io_copy_json">Sao chép JSON</string>
+    <string name="io_share_json">Chia sẻ / Lưu file</string>
+    <string name="io_copied_toast">Đã sao chép JSON vào bộ nhớ tạm</string>
+    <string name="io_import_section">Nhập Flashcards</string>
+    <string name="io_import_desc">Khôi phục hoặc bổ sung bộ thẻ từ file hoặc văn bản JSON.</string>
+    <string name="io_import_paste_label">Dán nội dung JSON *</string>
+    <string name="io_import_paste_hint">Dán văn bản JSON flashcard vào đây...</string>
+    <string name="io_import_preview_btn">Kiểm tra &amp; Xem trước</string>
+    <string name="io_import_preview_title">Xác thực dữ liệu nhập</string>
+    <string name="io_import_summary">Tìm thấy %1$d bộ thẻ với tổng cộng %2$d thẻ.</string>
+    <string name="io_import_mode_new">Tạo thành bộ thẻ mới</string>
+    <string name="io_import_mode_merge">Gộp vào bộ thẻ đã chọn</string>
+    <string name="io_import_confirm_btn">Tiến hành nhập ngay</string>
+    <string name="io_import_success">Đã nhập thành công %1$d thẻ!</string>
+    <string name="io_import_error_invalid">Định dạng JSON không hợp lệ hoặc thiếu trường dữ liệu thẻ.</string>
+
+    <!-- Phase 8: Audio & Text-to-Speech (TTS) + Haptics -->
+    <string name="tts_speak_front">Nghe phát âm câu hỏi</string>
+    <string name="tts_speak_back">Nghe phát âm câu trả lời</string>
+    <string name="tts_stop">Dừng âm thanh</string>
+    <string name="tts_speed">Tốc độ đọc</string>
+    <string name="tts_pitch">Cao độ giọng</string>
+    <string name="tts_not_supported">Trình đọc giọng nói chưa sẵn sàng hoặc không hỗ trợ ngôn ngữ này.</string>
+    <string name="audio_settings_title">Âm thanh &amp; Phát âm (TTS)</string>
+    <string name="setting_auto_speak_front">Tự động đọc câu hỏi</string>
+    <string name="setting_auto_speak_front_desc">Tự động phát âm câu hỏi khi thẻ xuất hiện</string>
+    <string name="setting_auto_speak_back">Tự động đọc đáp án</string>
+    <string name="setting_auto_speak_back_desc">Tự động phát âm đáp án khi lật mặt sau</string>
+    <string name="setting_speech_rate">Tốc độ đọc: %1$.1fx</string>
+    <string name="setting_speech_pitch">Cao độ giọng: %1$.1fx</string>
+    <string name="setting_tts_test_btn">Thử nghiệm giọng đọc</string>
+    <string name="setting_tts_test_text">Chào mừng bạn đến với ứng dụng thẻ ghi nhớ ngắt quãng SM-2 thông minh.</string>
+    <string name="setting_haptic_title">Phản hồi rung (Haptic Feedback)</string>
+    <string name="setting_haptic_toggle">Rung khi thao tác</string>
+    <string name="setting_haptic_desc">Tạo độ rung nhẹ khi lật thẻ và khi chấm điểm đánh giá thẻ</string>
+
+    <!-- Phase 9: Settings, Reminders & Difficult Cards -->
+    <string name="nav_settings">Cài đặt</string>
+    <string name="settings_title">Cài đặt &amp; Tùy chọn</string>
+    <string name="settings_study_section">Học tập &amp; Giới hạn hàng ngày</string>
+    <string name="setting_new_cards_limit">Giới hạn thẻ mới mỗi ngày</string>
+    <string name="setting_new_cards_limit_desc">Số lượng thẻ mới tối đa nạp vào mỗi ngày (%1$d thẻ)</string>
+    <string name="setting_review_cards_limit">Giới hạn thẻ ôn tập mỗi ngày</string>
+    <string name="setting_review_cards_limit_desc">Số lượng thẻ ôn tập tối đa mỗi ngày (%1$d thẻ)</string>
+    <string name="setting_timer">Đồng hồ đếm ngược mỗi thẻ</string>
+    <string name="setting_timer_desc">Tăng cường phản xạ ghi nhớ nhanh với giới hạn thời gian</string>
+    <string name="setting_timer_disabled">Tắt (Không giới hạn thời gian)</string>
+    <string name="setting_timer_seconds">%1$d giây</string>
+    <string name="card_timer_remaining">%1$ds</string>
+    <string name="card_timer_time_up">Hết thời gian!</string>
+
+    <string name="settings_reminder_section">Thông báo nhắc nhở ôn bài</string>
+    <string name="setting_reminder_enable">Bật nhắc nhở hàng ngày</string>
+    <string name="setting_reminder_desc">Nhận thông báo mỗi ngày để không bỏ lỡ thẻ đến hạn và giữ vững chuỗi Streak</string>
+    <string name="setting_reminder_time">Thời gian nhắc nhở</string>
+    <string name="setting_reminder_time_desc">Mỗi ngày lúc %1$02d:%2$02d</string>
+    <string name="setting_reminder_test_btn">Gửi thông báo thử</string>
+    <string name="setting_reminder_test_sent">Đã gửi thông báo thử nghiệm! Vui lòng kiểm tra thanh thông báo.</string>
+    <string name="notification_channel_name">Nhắc nhở ôn bài</string>
+    <string name="notification_channel_desc">Thông báo hàng ngày nhắc bạn ôn tập các thẻ ghi nhớ đến hạn</string>
+    <string name="notification_title">Đến giờ ôn bài rồi!</string>
+    <string name="notification_message_cards">Bạn đang có %1$d thẻ cần ôn tập hôm nay. Hãy tiếp tục giữ vững phong độ nhé!</string>
+    <string name="notification_message_empty">Hôm nay bạn đã ôn tập hết các thẻ! Rất tuyệt vời.</string>
+    <string name="notification_permission_dialog_title">Cho phép gửi thông báo</string>
+    <string name="notification_permission_dialog_desc">Ứng dụng cần quyền gửi thông báo để nhắc nhở bạn ôn tập thẻ đúng lịch khoa học SM-2.</string>
+    <string name="notification_permission_grant">Cho phép</string>
+    <string name="notification_permission_deny">Để sau</string>
+
+    <string name="settings_srs_section">Thuật toán &amp; Thẻ khó (Leech)</string>
+    <string name="setting_leech_title">Thẻ khó &amp; Hay quên</string>
+    <string name="setting_leech_desc">Các thẻ bạn thường đánh giá Quên hoặc điểm khó (%1$d thẻ)</string>
+    <string name="setting_leech_btn">Luyện tập riêng thẻ khó</string>
+    <string name="leech_screen_title">Danh sách thẻ khó (Leech)</string>
+    <string name="leech_empty_title">Không có thẻ khó nào</string>
+    <string name="leech_empty_desc">Tuyệt vời! Tất cả các thẻ của bạn đều đang có mức độ ghi nhớ tốt.</string>
+
+    <!-- Tùy chỉnh nhà cung cấp AI & Model -->
+    <string name="settings_ai_section">Nhà cung cấp AI &amp; Tùy chỉnh Model</string>
+    <string name="setting_ai_provider">Nhà cung cấp AI</string>
+    <string name="setting_ai_provider_desc">Hỗ trợ Google Gemini, OpenRouter, Groq Cloud, NVIDIA NIM hoặc bất kỳ API tương thích OpenAI nào.</string>
+    <string name="setting_ai_endpoint">Địa chỉ API Endpoint</string>
+    <string name="setting_ai_endpoint_hint">https://openrouter.ai/api/v1/chat/completions</string>
+    <string name="setting_ai_method">Phương thức HTTP</string>
+    <string name="setting_ai_model">Tên Model AI</string>
+    <string name="setting_ai_model_hint">VD: meta-llama/llama-3.3-70b-instruct, llama-3.2-11b-vision-preview</string>
+    <string name="setting_ai_key">Khóa bí mật API Key</string>
+    <string name="setting_ai_key_hint">Dán khóa API của bạn tại đây (sk-or-..., gsk_..., v.v.)</string>
+    <string name="setting_ai_key_help">Lưu trữ an toàn trên thiết bị của bạn.</string>
+    <string name="setting_ai_headers">Headers tùy chỉnh (Không bắt buộc)</string>
+    <string name="setting_ai_headers_hint">Authorization: Bearer xyz hoặc {\"Header\": \"Value\"}</string>
+    <string name="setting_ai_reset_defaults">Khôi phục mặc định nhà cung cấp</string>
+    <string name="setting_ai_test_btn">Kiểm tra kết nối AI</string>
+    <string name="setting_ai_testing">Đang thử kết nối...</string>
+    <string name="setting_ai_test_dialog_title">Kết quả kiểm tra AI</string>
+    <string name="setting_ai_test_success">Kết nối thành công!</string>
+    <string name="setting_ai_test_failed">Kết nối thất bại</string>
+
+    <!-- Quét ảnh tạo thẻ Flashcard đa phương thức -->
+    <string name="ai_gen_mode_topic">Theo chủ đề</string>
+    <string name="ai_gen_mode_image">Quét từ hình ảnh</string>
+    <string name="ai_gen_image_title">Tải lên hình ảnh tài liệu hoặc ghi chú</string>
+    <string name="ai_gen_image_desc">Chọn ảnh chụp slide bài giảng, trang sách giáo khoa, ghi chú viết tay hoặc sơ đồ. AI nhận diện nội dung và tự trích xuất flashcard.</string>
+    <string name="ai_gen_image_pick_btn">Chọn ảnh từ thiết bị</string>
+    <string name="ai_gen_image_change_btn">Đổi ảnh khác</string>
+    <string name="ai_gen_image_remove_btn">Gỡ ảnh</string>
+    <string name="ai_gen_image_hint_label">Gợi ý trọng tâm cho AI (Không bắt buộc)</string>
+    <string name="ai_gen_image_hint_placeholder">VD: Tập trung vào từ vựng mới, trích xuất công thức định nghĩa...</string>
+    <string name="ai_gen_dest_label">Điểm đến lưu thẻ</string>
+    <string name="ai_gen_dest_current">Thêm vào bộ thẻ hiện tại</string>
+    <string name="ai_gen_dest_new">Tạo bộ thẻ mới</string>
+    <string name="ai_gen_new_deck_name">Tên bộ thẻ mới *</string>
+    <string name="ai_gen_new_deck_name_hint">VD: Ghi chú Sinh học bài 4</string>
+    <string name="ai_gen_new_deck_desc">Mô tả bộ thẻ (Không bắt buộc)</string>
+    <string name="ai_gen_btn_generate_image">Quét ảnh &amp; Tạo Flashcard</string>
+    <string name="ai_gen_loading_image">AI đang quét ảnh, nhận diện chữ và tự động trích xuất các câu hỏi flashcard...</string>
+    <string name="ai_gen_success_details">Đã lưu thành công %1$d thẻ vào \"%2$s\"</string>
+    <string name="ai_gen_view_deck_btn">Xem bộ thẻ</string>
+
+    <!-- General / Actions -->
+    <string name="action_cancel">Hủy</string>
+    <string name="action_confirm">Xác nhận</string>
+    <string name="action_delete">Xóa</string>
+    <string name="action_save">Lưu</string>
+    <string name="action_create">Tạo mới</string>
+    <string name="action_edit">Sửa</string>
+    <string name="action_close">Đóng</string>
+    <string name="action_retry">Thử lại</string>
+</resources>

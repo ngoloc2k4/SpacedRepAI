@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Back card (tilted) -->
+    <path
+        android:fillColor="#818CF8"
+        android:pathData="M38,30 L74,36 A4,4 0 0,1 77.5,40.5 L69,76 A4,4 0 0,1 64.5,79.5 L28.5,73.5 A4,4 0 0,1 25,69 L33.5,33.5 A4,4 0 0,1 38,30 Z" />
+    <!-- Front card (main) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,36 L76,36 A5,5 0 0,1 81,41 L81,77 A5,5 0 0,1 76,82 L32,82 A5,5 0 0,1 27,77 L27,41 A5,5 0 0,1 32,36 Z" />
+    <!-- Top card header line -->
+    <path
+        android:fillColor="#4F46E5"
+        android:pathData="M34,44 L60,44 A2,2 0 0,1 60,48 L34,48 A2,2 0 0,1 34,44 Z" />
+    <!-- Content lines -->
+    <path
+        android:fillColor="#E0E7FF"
+        android:pathData="M34,53 L74,53 A1.5,1.5 0 0,1 74,56 L34,56 A1.5,1.5 0 0,1 34,53 Z" />
+    <path
+        android:fillColor="#E0E7FF"
+        android:pathData="M34,60 L66,60 A1.5,1.5 0 0,1 66,63 L34,63 A1.5,1.5 0 0,1 34,60 Z" />
+    <!-- Spaced repetition arc / pulse / check badge -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M70,64 A9,9 0 1,0 70,82 A9,9 0 1,0 70,64 Z" />
+    <!-- Checkmark inside badge -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M66,73 L69,76 L74.5,70.5" />
+</vector>

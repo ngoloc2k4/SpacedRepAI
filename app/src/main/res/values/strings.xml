@@ -1,0 +1,275 @@
+<resources>
+    <string name="app_name">SRS Flashcards</string>
+    <string name="app_subtitle">Spaced Repetition Engine</string>
+
+    <!-- Navigation & Titles -->
+    <string name="nav_decks">Decks</string>
+    <string name="nav_cards">Cards</string>
+    <string name="nav_review">Review</string>
+    <string name="nav_stats">Statistics</string>
+    <string name="nav_import_export">Import &amp; Export</string>
+    <string name="nav_ai_generator">AI Generator</string>
+
+    <!-- Decks Screen -->
+    <string name="today_title">Today</string>
+    <string name="today_due">Due</string>
+    <string name="today_learning">Learning</string>
+    <string name="today_new">New</string>
+    <string name="start_daily_review">Start Daily Review</string>
+    <string name="start_daily_review_count">Start Daily Review (%1$d)</string>
+    <string name="decks_header">Decks</string>
+    <string name="decks_count">%1$d decks</string>
+    <string name="cards_count">%1$d cards</string>
+    <string name="new_deck_dialog_title">New Flashcard Deck</string>
+    <string name="deck_name_label">Deck Title *</string>
+    <string name="deck_name_placeholder">e.g. Spanish Vocabulary</string>
+    <string name="deck_desc_label">Description (Optional)</string>
+    <string name="deck_desc_placeholder">e.g. Core concepts, verbs, idioms</string>
+    <string name="deck_name_empty_error">Deck title cannot be empty</string>
+    <string name="delete_deck_dialog_title">Delete Deck</string>
+    <string name="delete_deck_confirm_msg">Are you sure you want to delete \"%1$s\" and all of its cards?</string>
+    <string name="empty_decks_title">No Flashcard Decks Yet</string>
+    <string name="empty_decks_desc">Create your first deck to start learning with the SM-2 Spaced Repetition algorithm.</string>
+    <string name="create_first_deck">Create First Deck</string>
+    <string name="create_deck">Create Deck</string>
+    <string name="study">Study</string>
+    <string name="review_due">Review (%1$d)</string>
+    <string name="deck_progress">Progress</string>
+    <string name="cards_btn_label">Cards (%1$d)</string>
+
+    <!-- Cards Screen -->
+    <string name="cards_title">Deck Cards</string>
+    <string name="add_card_btn">Add Card</string>
+    <string name="add_card_dialog_title">Add Flashcard</string>
+    <string name="edit_card_dialog_title">Edit Flashcard</string>
+    <string name="card_front_label">Front (Question / Prompt) *</string>
+    <string name="card_front_placeholder">e.g. What is polymorphism?</string>
+    <string name="card_back_label">Back (Answer / Explanation) *</string>
+    <string name="card_back_placeholder">e.g. The ability of an object to take on many forms</string>
+    <string name="card_front_empty_error">Front cannot be empty</string>
+    <string name="card_back_empty_error">Back cannot be empty</string>
+    <string name="empty_cards_title">No Cards in this Deck</string>
+    <string name="empty_cards_desc">Add flashcards manually or generate them automatically using Gemini AI.</string>
+    <string name="add_first_card">Add First Card</string>
+    <string name="delete_card_dialog_title">Delete Card</string>
+    <string name="delete_card_confirm_msg">Are you sure you want to delete this card?</string>
+    <string name="card_interval_tag">Interval: %1$dd</string>
+    <string name="card_ease_tag">EF: %1$.2f</string>
+    <string name="card_reps_tag">Reps: %1$d</string>
+    <string name="card_meta_interval">Interval</string>
+    <string name="card_meta_reps">Reps</string>
+    <string name="card_meta_ease">EF</string>
+    <string name="state_new">NEW</string>
+    <string name="state_learning">LEARNING</string>
+    <string name="state_review">REVIEW</string>
+    <string name="state_relearning">RELEARN</string>
+    <string name="card_state_new">New</string>
+    <string name="card_state_learning">Learning</string>
+    <string name="card_state_review">Review</string>
+    <string name="card_state_relearning">Relearning</string>
+
+    <!-- Review Screen -->
+    <string name="review_screen_title">Review</string>
+    <string name="tap_to_reveal">Tap card to reveal answer</string>
+    <string name="tap_to_hide">Tap card to flip back</string>
+    <string name="rating_again">Again</string>
+    <string name="rating_hard">Hard</string>
+    <string name="rating_good">Good</string>
+    <string name="rating_easy">Easy</string>
+    <string name="session_completed_title">Session Completed!</string>
+    <string name="session_completed_msg">Reviewed %1$d cards in %2$s. Your next review intervals have been updated in the local database.</string>
+    <string name="recap_reviewed">Reviewed</string>
+    <string name="recap_time">Time</string>
+    <string name="back_to_decks">Back to Decks</string>
+    <string name="review_again">Review Again</string>
+    <string name="type_answer_toggle">Type Answer Mode</string>
+    <string name="type_answer_placeholder">Type your answer here...</string>
+    <string name="evaluate_with_ai">Evaluate Answer with AI</string>
+    <string name="ai_evaluating">Evaluating with Gemini AI...</string>
+    <string name="ai_eval_result_correct">Correct!</string>
+    <string name="ai_eval_result_partial">Partially Correct</string>
+    <string name="ai_eval_result_incorrect">Incorrect</string>
+    <string name="btn_ai_explain">Explain with AI</string>
+    <string name="btn_ai_mnemonic">Mnemonic with AI</string>
+    <string name="ai_explanation_title">AI Explanation</string>
+    <string name="ai_mnemonic_title">AI Mnemonic Memory Hook</string>
+
+    <!-- Statistics Screen -->
+    <string name="stats_title">Learning Statistics</string>
+    <string name="stats_overview">Overview</string>
+    <string name="stats_total_cards">Total Cards</string>
+    <string name="stats_reviews_today">Reviews Today</string>
+    <string name="stats_reviews_week">Reviews This Week</string>
+    <string name="stats_streak">Current Streak</string>
+    <string name="stats_streak_value">%1$d days</string>
+    <string name="stats_total_study_time">Total Study Time</string>
+    <string name="stats_srs_metrics">SRS Metrics</string>
+    <string name="stats_retention_rate">Retention Rate</string>
+    <string name="stats_avg_interval">Avg. Interval</string>
+    <string name="stats_avg_interval_value">%1$.1f days</string>
+    <string name="stats_mature_cards">Mature Cards (≥21d)</string>
+    <string name="stats_young_cards">Young Cards (&lt;21d)</string>
+    <string name="stats_cards_due">Cards Due Now</string>
+    <string name="stats_rating_breakdown">Rating Distribution</string>
+    <string name="stats_rate_again">Again: %1$.1f%%</string>
+    <string name="stats_rate_hard">Hard: %1$.1f%%</string>
+    <string name="stats_rate_good">Good: %1$.1f%%</string>
+    <string name="stats_rate_easy">Easy: %1$.1f%%</string>
+    <string name="stats_card_states">Card States</string>
+    <string name="stats_forecast">Review Forecast</string>
+    <string name="stats_forecast_tomorrow">Tomorrow</string>
+    <string name="stats_forecast_3d">In 3 Days</string>
+    <string name="stats_forecast_7d">In 7 Days</string>
+    <string name="stats_forecast_30d">In 30 Days</string>
+
+    <!-- AI Generator Screen -->
+    <string name="ai_gen_title">AI Flashcard Generator</string>
+    <string name="ai_gen_topic_label">Topic or Study Material *</string>
+    <string name="ai_gen_topic_hint">e.g., Japanese N5 core verbs, World War 2 timeline, Machine learning concepts...</string>
+    <string name="ai_gen_count_label">Number of Cards (3 - 15)</string>
+    <string name="ai_gen_language_label">Language</string>
+    <string name="ai_gen_btn_generate">Generate with Gemini</string>
+    <string name="ai_gen_loading">Gemini AI is analyzing topic and generating flashcards...</string>
+    <string name="ai_gen_preview_title">Card Preview &amp; Selection</string>
+    <string name="ai_gen_preview_desc">Review the generated cards. Uncheck any you do not want, or edit them before saving.</string>
+    <string name="ai_gen_save_btn">Save %1$d Selected Cards to Deck</string>
+    <string name="ai_gen_disclaimer">Cards are saved locally only after your confirmation. AI output may vary.</string>
+    <string name="ai_gen_select_all">Select All</string>
+    <string name="ai_gen_deselect_all">Deselect All</string>
+    <string name="ai_gen_select_deck">Target Deck: %1$s</string>
+    <string name="ai_gen_success">%1$d cards added to deck!</string>
+
+    <!-- Import / Export Screen -->
+    <string name="io_title">Import &amp; Export</string>
+    <string name="io_export_section">Export Flashcards</string>
+    <string name="io_export_desc">Backup your decks and cards in portable standard JSON format.</string>
+    <string name="io_export_all_btn">Export All Decks (%1$d)</string>
+    <string name="io_export_single_btn">Export Current Deck</string>
+    <string name="io_copy_json">Copy JSON</string>
+    <string name="io_share_json">Share / Save File</string>
+    <string name="io_copied_toast">Copied JSON to clipboard</string>
+    <string name="io_import_section">Import Flashcards</string>
+    <string name="io_import_desc">Import decks and cards from JSON text or file.</string>
+    <string name="io_import_paste_label">Paste JSON Content *</string>
+    <string name="io_import_paste_hint">Paste valid flashcard JSON here...</string>
+    <string name="io_import_preview_btn">Inspect &amp; Preview Import</string>
+    <string name="io_import_preview_title">Import Verification</string>
+    <string name="io_import_summary">Found %1$d deck(s) containing %2$d card(s).</string>
+    <string name="io_import_mode_new">Create as New Deck(s)</string>
+    <string name="io_import_mode_merge">Merge into Existing Deck</string>
+    <string name="io_import_confirm_btn">Import Now</string>
+    <string name="io_import_success">Successfully imported %1$d card(s)!</string>
+    <string name="io_import_error_invalid">Invalid JSON format or missing card fields.</string>
+
+    <!-- Phase 8: Audio & Text-to-Speech (TTS) + Haptics -->
+    <string name="tts_speak_front">Listen to question</string>
+    <string name="tts_speak_back">Listen to answer</string>
+    <string name="tts_stop">Stop audio</string>
+    <string name="tts_speed">Speech speed</string>
+    <string name="tts_pitch">Pitch</string>
+    <string name="tts_not_supported">Speech engine not ready or language unsupported.</string>
+    <string name="audio_settings_title">Audio &amp; Speech (TTS)</string>
+    <string name="setting_auto_speak_front">Auto-play question audio</string>
+    <string name="setting_auto_speak_front_desc">Read question aloud automatically when card opens</string>
+    <string name="setting_auto_speak_back">Auto-play answer audio</string>
+    <string name="setting_auto_speak_back_desc">Read answer aloud automatically when card is flipped</string>
+    <string name="setting_speech_rate">Speech Rate: %1$.1fx</string>
+    <string name="setting_speech_pitch">Speech Pitch: %1$.1fx</string>
+    <string name="setting_tts_test_btn">Test Voice Pronunciation</string>
+    <string name="setting_tts_test_text">Welcome to Spaced Repetition Flashcards. Smart learning powered by SM-2.</string>
+    <string name="setting_haptic_title">Haptic Feedback &amp; Vibration</string>
+    <string name="setting_haptic_toggle">Vibration feedback</string>
+    <string name="setting_haptic_desc">Subtle tactile response when flipping cards and rating memory recall</string>
+
+    <!-- Phase 9: Settings, Reminders & Difficult Cards -->
+    <string name="nav_settings">Settings</string>
+    <string name="settings_title">Settings &amp; Preferences</string>
+    <string name="settings_study_section">Study &amp; Daily Limits</string>
+    <string name="setting_new_cards_limit">Daily New Cards Limit</string>
+    <string name="setting_new_cards_limit_desc">Maximum new cards introduced per day (%1$d cards)</string>
+    <string name="setting_review_cards_limit">Daily Review Cards Limit</string>
+    <string name="setting_review_cards_limit_desc">Maximum cards to review per day (%1$d cards)</string>
+    <string name="setting_timer">Card Countdown Timer</string>
+    <string name="setting_timer_desc">Encourage rapid recall with a time limit</string>
+    <string name="setting_timer_disabled">Disabled (No time limit)</string>
+    <string name="setting_timer_seconds">%1$d seconds</string>
+    <string name="card_timer_remaining">%1$ds</string>
+    <string name="card_timer_time_up">Time is up!</string>
+
+    <string name="settings_reminder_section">Daily Study Notifications</string>
+    <string name="setting_reminder_enable">Daily Review Reminder</string>
+    <string name="setting_reminder_desc">Receive a friendly notification to review cards and maintain your streak</string>
+    <string name="setting_reminder_time">Reminder Time</string>
+    <string name="setting_reminder_time_desc">Daily at %1$02d:%2$02d</string>
+    <string name="setting_reminder_test_btn">Send Test Notification</string>
+    <string name="setting_reminder_test_sent">Test notification sent! Check your notification bar.</string>
+    <string name="notification_channel_name">Study Reminders</string>
+    <string name="notification_channel_desc">Daily notifications reminding you to review due flashcards</string>
+    <string name="notification_title">Time to Review!</string>
+    <string name="notification_message_cards">You have %1$d cards waiting for review today. Keep your streak alive!</string>
+    <string name="notification_message_empty">All caught up today! Great job maintaining your memory.</string>
+    <string name="notification_permission_dialog_title">Allow Notifications</string>
+    <string name="notification_permission_dialog_desc">Enable notifications so the app can remind you when flashcards are due for review.</string>
+    <string name="notification_permission_grant">Allow</string>
+    <string name="notification_permission_deny">Not now</string>
+
+    <string name="settings_srs_section">Spaced Repetition &amp; Difficult Cards</string>
+    <string name="setting_leech_title">Difficult &amp; Leech Cards</string>
+    <string name="setting_leech_desc">Cards you struggle with or lapse frequently (%1$d identified)</string>
+    <string name="setting_leech_btn">Review Difficult Cards</string>
+    <string name="leech_screen_title">Difficult Cards (Leeches)</string>
+    <string name="leech_empty_title">No Difficult Cards Found</string>
+    <string name="leech_empty_desc">Great job! All your cards have good retention and stability.</string>
+
+    <!-- AI Providers & Custom Configuration -->
+    <string name="settings_ai_section">AI Provider &amp; Model Customization</string>
+    <string name="setting_ai_provider">AI Provider</string>
+    <string name="setting_ai_provider_desc">Choose between Google Gemini, OpenRouter, Groq, NVIDIA NIM, or Custom OpenAI-compatible endpoints.</string>
+    <string name="setting_ai_endpoint">API Endpoint URL</string>
+    <string name="setting_ai_endpoint_hint">https://openrouter.ai/api/v1/chat/completions</string>
+    <string name="setting_ai_method">HTTP Method</string>
+    <string name="setting_ai_model">Model Name</string>
+    <string name="setting_ai_model_hint">e.g. meta-llama/llama-3.3-70b-instruct, llama-3.2-11b-vision-preview</string>
+    <string name="setting_ai_key">API Key</string>
+    <string name="setting_ai_key_hint">Paste your API key here (sk-or-..., gsk_..., etc.)</string>
+    <string name="setting_ai_key_help">Stored securely on device. Leave empty to use system default where available.</string>
+    <string name="setting_ai_headers">Custom Headers (Optional)</string>
+    <string name="setting_ai_headers_hint">Authorization: Bearer xyz or {\"Header\": \"Value\"}</string>
+    <string name="setting_ai_reset_defaults">Reset Provider Defaults</string>
+    <string name="setting_ai_test_btn">Test AI Connection</string>
+    <string name="setting_ai_testing">Testing Connection...</string>
+    <string name="setting_ai_test_dialog_title">AI Connection Test</string>
+    <string name="setting_ai_test_success">Connection Successful!</string>
+    <string name="setting_ai_test_failed">Connection Failed</string>
+
+    <!-- Multimodal AI Flashcard Generation -->
+    <string name="ai_gen_mode_topic">By Topic</string>
+    <string name="ai_gen_mode_image">Scan Image / Notes</string>
+    <string name="ai_gen_image_title">Upload Image or Study Notes</string>
+    <string name="ai_gen_image_desc">Select a photo of lecture slides, textbook pages, handwritten notes, or diagrams. The AI will scan the content and generate flashcards.</string>
+    <string name="ai_gen_image_pick_btn">Select Image from Device</string>
+    <string name="ai_gen_image_change_btn">Change Image</string>
+    <string name="ai_gen_image_remove_btn">Remove</string>
+    <string name="ai_gen_image_hint_label">Extraction Focus / Extra Prompt (Optional)</string>
+    <string name="ai_gen_image_hint_placeholder">e.g. Focus on definitions and key equations...</string>
+    <string name="ai_gen_dest_label">Save Destination</string>
+    <string name="ai_gen_dest_current">Import into Current Deck</string>
+    <string name="ai_gen_dest_new">Create a New Deck</string>
+    <string name="ai_gen_new_deck_name">New Deck Name *</string>
+    <string name="ai_gen_new_deck_name_hint">e.g. Biology Ch. 4 Visual Notes</string>
+    <string name="ai_gen_new_deck_desc">Deck Description (Optional)</string>
+    <string name="ai_gen_btn_generate_image">Scan Image &amp; Generate Cards</string>
+    <string name="ai_gen_loading_image">AI is scanning image and extracting key flashcard concepts...</string>
+    <string name="ai_gen_success_details">Saved %1$d cards to \"%2$s\"</string>
+    <string name="ai_gen_view_deck_btn">Open Deck</string>
+
+    <!-- General / Actions -->
+    <string name="action_cancel">Cancel</string>
+    <string name="action_confirm">Confirm</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_save">Save</string>
+    <string name="action_create">Create</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_close">Close</string>
+    <string name="action_retry">Retry</string>
+</resources>
