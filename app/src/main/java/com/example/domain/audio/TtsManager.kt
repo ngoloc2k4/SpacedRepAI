@@ -63,7 +63,7 @@ class TtsManager(private val context: Context) : TextToSpeech.OnInitListener {
 
         // Detect if text contains Vietnamese diacritics
         val isVietnamese = text.any { it in "àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđĐ" }
-        val targetLocale = if (isVietnamese) Locale("vi", "VN") else Locale.US
+        val targetLocale = if (isVietnamese) Locale.forLanguageTag("vi-VN") else Locale.US
 
         val langResult = tts?.setLanguage(targetLocale)
         if (langResult == TextToSpeech.LANG_MISSING_DATA || langResult == TextToSpeech.LANG_NOT_SUPPORTED) {

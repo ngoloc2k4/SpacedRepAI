@@ -2,6 +2,7 @@ package com.example.data.preferences
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.example.data.security.SecureKeyStorage
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -78,7 +79,10 @@ data class AppSettings(
     fun getEffectiveHttpMethod(): String = if (aiHttpMethod.isNotBlank()) aiHttpMethod.trim().uppercase() else aiProvider.defaultMethod
 }
 
-class AppSettingsManager(context: Context) {
+class AppSettingsManager(
+    context: Context,
+    val secureKeyStorage: SecureKeyStorage = SecureKeyStorage()
+) {
 
     private val prefs: SharedPreferences =
         context.getSharedPreferences("app_settings_prefs", Context.MODE_PRIVATE)
@@ -88,6 +92,19 @@ class AppSettingsManager(context: Context) {
 
     private fun loadSettings(): AppSettings {
         val providerId = prefs.getString("key_ai_provider", AiProvider.GEMINI.id) ?: AiProvider.GEMINI.id
+        val storedRawKey = prefs.getString("key_ai_api_key", "") ?: ""
+        val decryptedKey = if (storedRawKey.isNotBlank()) {
+            val decrypted = secureKeyStorage.decrypt(storedRawKey)
+            // If stored in legacy plaintext, automatically migrate to encrypted format in Keystore
+            if (!storedRawKey.startsWith("SEC_GCM:") && !storedRawKey.startsWith("OBF:")) {
+                val encrypted = secureKeyStorage.encrypt(storedRawKey)
+                prefs.edit().putString("key_ai_api_key", encrypted).apply()
+            }
+            decrypted
+        } else {
+            ""
+        }
+
         return AppSettings(
             dailyNewCardsLimit = prefs.getInt("key_new_limit", 20),
             dailyReviewCardsLimit = prefs.getInt("key_review_limit", 100),
@@ -104,7 +121,7 @@ class AppSettingsManager(context: Context) {
             aiEndpoint = prefs.getString("key_ai_endpoint", "") ?: "",
             aiHttpMethod = prefs.getString("key_ai_http_method", "POST") ?: "POST",
             aiModel = prefs.getString("key_ai_model", "") ?: "",
-            aiApiKey = prefs.getString("key_ai_api_key", "") ?: "",
+            aiApiKey = decryptedKey,
             aiCustomHeaders = prefs.getString("key_ai_custom_headers", "") ?: ""
         )
     }
@@ -184,8 +201,10 @@ class AppSettingsManager(context: Context) {
     }
 
     fun updateAiApiKey(apiKey: String) {
-        prefs.edit().putString("key_ai_api_key", apiKey).apply()
-        _settingsFlow.value = _settingsFlow.value.copy(aiApiKey = apiKey)
+        val trimmed = apiKey.trim()
+        val encrypted = if (trimmed.isNotBlank()) secureKeyStorage.encrypt(trimmed) else ""
+        prefs.edit().putString("key_ai_api_key", encrypted).apply()
+        _settingsFlow.value = _settingsFlow.value.copy(aiApiKey = trimmed)
     }
 
     fun updateAiCustomHeaders(headers: String) {
