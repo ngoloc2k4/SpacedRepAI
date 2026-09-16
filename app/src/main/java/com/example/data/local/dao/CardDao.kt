@@ -26,6 +26,9 @@ interface CardDao {
     @Query("SELECT * FROM cards WHERE id = :id")
     fun getCardById(id: Long): Flow<CardEntity?>
 
+    @Query("SELECT * FROM cards WHERE id = :id")
+    suspend fun getCardByIdSnapshot(id: Long): CardEntity?
+
     @Query("SELECT COUNT(*) FROM cards WHERE deckId = :deckId")
     fun getCardCountForDeck(deckId: Long): Flow<Int>
 

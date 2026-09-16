@@ -19,3 +19,15 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Room entities and SRS domain models
+-keep class com.example.data.local.entity.** { *; }
+-keep class com.example.domain.srs.** { *; }
+
+# Moshi / AI / Backup DTOs
+-keep class com.example.domain.io.** { *; }
+-keep class com.example.domain.ai.** { *; }
+
+# UI & Views for Robolectric Native graphics in Release unit tests
+-keep class com.example.ui.** { *; }
+-keep class ** extends android.view.View { *; }
