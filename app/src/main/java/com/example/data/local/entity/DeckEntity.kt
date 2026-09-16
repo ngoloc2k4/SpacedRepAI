@@ -9,5 +9,7 @@ data class DeckEntity(
     val id: Long = 0,
     val name: String,
     val description: String = "",
+    val colorHex: String = "",
+    val tags: String = "",
     val createdAt: Long = System.currentTimeMillis()
 )

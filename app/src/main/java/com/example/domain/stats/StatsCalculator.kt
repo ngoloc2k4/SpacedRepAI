@@ -163,6 +163,11 @@ object StatsCalculator {
             if (date in (currentTimeMillis + 1)..in3DaysThreshold) dueIn3++
             if (date in (currentTimeMillis + 1)..in7DaysThreshold) dueIn7++
             if (date in (currentTimeMillis + 1)..in30DaysThreshold) dueIn30++
+            val reviewDate = card.nextReviewDate
+            if (reviewDate in (currentTimeMillis + 1)..tomorrowThreshold) dueTomorrow++
+            if (reviewDate in (currentTimeMillis + 1)..in3DaysThreshold) dueIn3++
+            if (reviewDate in (currentTimeMillis + 1)..in7DaysThreshold) dueIn7++
+            if (reviewDate in (currentTimeMillis + 1)..in30DaysThreshold) dueIn30++
         }
 
         val avgInterval = if (reviewCardCount > 0) {

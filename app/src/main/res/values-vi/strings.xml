@@ -263,6 +263,13 @@
     <string name="ai_gen_success_details">Đã lưu thành công %1$d thẻ vào \"%2$s\"</string>
     <string name="ai_gen_view_deck_btn">Xem bộ thẻ</string>
 
+    <!-- Pagination & Search -->
+    <string name="cards_search_hint">Tìm kiếm thẻ theo câu hỏi hoặc câu trả lời...</string>
+    <string name="cards_showing_paged">Hiển thị %1$d / %2$d thẻ</string>
+    <string name="cards_load_more">Tải thêm thẻ</string>
+    <string name="cards_no_search_results">Không có thẻ nào phù hợp với tìm kiếm</string>
+    <string name="security_keystore_secured">Đã mã hóa an toàn bằng Android KeyStore (AES-256 GCM)</string>
+
     <!-- General / Actions -->
     <string name="action_cancel">Hủy</string>
     <string name="action_confirm">Xác nhận</string>

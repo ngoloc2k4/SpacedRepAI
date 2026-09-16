@@ -4,32 +4,37 @@ import android.app.Application
 import com.example.data.local.AppDatabase
 import com.example.data.local.entity.CardEntity
 import com.example.data.local.entity.DeckEntity
+import com.example.data.preferences.AppSettingsManager
 import com.example.data.repository.FlashcardRepository
+import com.example.di.AppContainer
+import com.example.di.DefaultAppContainer
+import com.example.domain.ai.AiService
+import com.example.domain.audio.TtsManager
+import com.example.domain.notification.ReminderManager
 import com.example.domain.srs.ReviewScheduler
 import com.example.domain.srs.Sm2Algorithm
+import com.example.util.CrashReporter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
 
 class FlashcardApplication : Application() {
-    val database by lazy { AppDatabase.getDatabase(this) }
-    val srsAlgorithm by lazy { Sm2Algorithm() }
-    val reviewScheduler by lazy { ReviewScheduler() }
-    val repository by lazy {
-        FlashcardRepository(
-            database = database,
-            srsAlgorithm = srsAlgorithm,
-            scheduler = reviewScheduler
-        )
-    }
-    val appSettingsManager by lazy { com.example.data.preferences.AppSettingsManager(this) }
-    val aiService: com.example.domain.ai.AiService by lazy { com.example.domain.ai.UniversalAiService(appSettingsManager) }
-    val ttsManager by lazy { com.example.domain.audio.TtsManager(this) }
-    val reminderManager by lazy { com.example.domain.notification.ReminderManager(this) }
+    lateinit var container: AppContainer
+
+    val database: AppDatabase get() = container.database
+    val srsAlgorithm: Sm2Algorithm get() = container.srsAlgorithm
+    val reviewScheduler: ReviewScheduler get() = container.reviewScheduler
+    val repository: FlashcardRepository get() = container.repository
+    val appSettingsManager: AppSettingsManager get() = container.appSettingsManager
+    val aiService: AiService get() = container.aiService
+    val ttsManager: TtsManager get() = container.ttsManager
+    val reminderManager: ReminderManager get() = container.reminderManager
 
     override fun onCreate() {
         super.onCreate()
+        CrashReporter.initUncaughtExceptionHandler()
+        container = DefaultAppContainer(this)
         seedStarterDeckIfEmpty()
     }
 

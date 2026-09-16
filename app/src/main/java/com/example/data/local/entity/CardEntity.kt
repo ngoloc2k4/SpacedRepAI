@@ -28,6 +28,7 @@ data class CardEntity(
     val deckId: Long,
     val front: String,
     val back: String,
+    val hint: String = "",
     val state: CardState = CardState.NEW,
     val repetitions: Int = 0,
     val intervalDays: Int = 0,

@@ -43,6 +43,19 @@ class FlashcardRepository(
 
     fun getCardsForDeck(deckId: Long): Flow<List<CardEntity>> = cardDao.getCardsForDeck(deckId)
 
+    fun getCardsForDeckPaged(deckId: Long, limit: Int, offset: Int): Flow<List<CardEntity>> =
+        cardDao.getCardsForDeckPaged(deckId, limit, offset)
+
+    suspend fun getCardsForDeckPagedSnapshot(deckId: Long, limit: Int, offset: Int): List<CardEntity> =
+        withContext(Dispatchers.IO) {
+            cardDao.getCardsForDeckPagedSnapshot(deckId, limit, offset)
+        }
+
+    suspend fun searchCardsPaged(deckId: Long, query: String, limit: Int, offset: Int): List<CardEntity> =
+        withContext(Dispatchers.IO) {
+            cardDao.searchCardsPaged(deckId, query, limit, offset)
+        }
+
     fun getCardCountForDeck(deckId: Long): Flow<Int> = cardDao.getCardCountForDeck(deckId)
 
     suspend fun getCardById(cardId: Long): CardEntity? = withContext(Dispatchers.IO) {
