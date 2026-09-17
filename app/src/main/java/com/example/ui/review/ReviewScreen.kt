@@ -21,7 +21,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.EditNote
@@ -30,6 +29,7 @@ import androidx.compose.material.icons.filled.Psychology
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Timer
 import androidx.compose.material.icons.filled.TouchApp
+import androidx.compose.material.icons.filled.VolumeUp
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.material3.AlertDialog
@@ -398,7 +398,7 @@ fun ActiveStudyCardView(
                                             .testTag("tts_front_button")
                                     ) {
                                         Icon(
-                                            imageVector = Icons.AutoMirrored.Filled.VolumeUp,
+                                            imageVector = Icons.Filled.VolumeUp,
                                             contentDescription = stringResource(R.string.tts_speak_front),
                                             tint = if (isSpeaking) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant,
                                             modifier = Modifier.size(20.dp)
@@ -510,7 +510,7 @@ fun ActiveStudyCardView(
                                             .testTag("tts_back_button")
                                     ) {
                                         Icon(
-                                            imageVector = Icons.AutoMirrored.Filled.VolumeUp,
+                                            imageVector = Icons.Filled.VolumeUp,
                                             contentDescription = stringResource(R.string.tts_speak_back),
                                             tint = if (isSpeaking) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.onSurfaceVariant,
                                             modifier = Modifier.size(20.dp)

@@ -32,15 +32,6 @@ interface CardDao {
     @Query("SELECT COUNT(*) FROM cards WHERE deckId = :deckId")
     fun getCardCountForDeck(deckId: Long): Flow<Int>
 
-    @Query("SELECT * FROM cards WHERE deckId = :deckId ORDER BY id ASC LIMIT :limit OFFSET :offset")
-    fun getCardsForDeckPaged(deckId: Long, limit: Int, offset: Int): Flow<List<CardEntity>>
-
-    @Query("SELECT * FROM cards WHERE deckId = :deckId ORDER BY id ASC LIMIT :limit OFFSET :offset")
-    suspend fun getCardsForDeckPagedSnapshot(deckId: Long, limit: Int, offset: Int): List<CardEntity>
-
-    @Query("SELECT * FROM cards WHERE deckId = :deckId AND (front LIKE '%' || :query || '%' OR back LIKE '%' || :query || '%') ORDER BY id ASC LIMIT :limit OFFSET :offset")
-    suspend fun searchCardsPaged(deckId: Long, query: String, limit: Int, offset: Int): List<CardEntity>
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCard(card: CardEntity): Long
 

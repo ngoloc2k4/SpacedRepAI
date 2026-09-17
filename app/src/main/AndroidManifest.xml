@@ -19,7 +19,8 @@
         android:theme="@style/Theme.MyApplication">
         <activity
             android:name="androidx.activity.ComponentActivity"
-            android:exported="true" />
+            android:exported="false"
+            tools:replace="android:exported" />
 
         <activity
             android:name=".MainActivity"
