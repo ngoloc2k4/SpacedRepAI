@@ -44,7 +44,6 @@ android {
     release {
       isCrunchPngs = false
       isMinifyEnabled = true
-      isShrinkResources = true
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
       signingConfig = signingConfigs.getByName("release")
     }
@@ -102,11 +101,11 @@ dependencies {
   implementation(libs.androidx.lifecycle.viewmodel.compose)
   implementation(libs.androidx.navigation.compose)
   implementation(libs.androidx.room.ktx)
+  implementation(libs.androidx.security.crypto)
   implementation(libs.androidx.room.runtime)
   implementation(libs.coil.compose)
   implementation(libs.converter.moshi)
   implementation(libs.firebase.ai)
-  implementation(libs.firebase.crashlytics)
   // Uncomment to use Firestore:
   // implementation(libs.firebase.firestore)
 

@@ -19,11 +19,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.AutoAwesome
-import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.PlayArrow
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Style
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -167,7 +165,7 @@ fun CardListScreen(
                     )
                 }
 
-                uiState.cards.isEmpty() && uiState.searchQuery.isBlank() -> {
+                uiState.cards.isEmpty() -> {
                     EmptyCardsView(
                         onAddCardClick = { showAddDialog = true },
                         onAiGenerateClick = { uiState.deck?.id?.let { onNavigateToAiGenerator(it) } },
@@ -183,121 +181,12 @@ fun CardListScreen(
                         contentPadding = PaddingValues(16.dp),
                         verticalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
-                        // Search bar item
-                        item(key = "search_header") {
-                            OutlinedTextField(
-                                value = uiState.searchQuery,
-                                onValueChange = { viewModel.onSearchQueryChanged(it) },
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .testTag("cards_search_input"),
-                                placeholder = {
-                                    Text(
-                                        text = stringResource(R.string.cards_search_hint),
-                                        style = MaterialTheme.typography.bodyMedium
-                                    )
-                                },
-                                leadingIcon = {
-                                    Icon(
-                                        Icons.Filled.Search,
-                                        contentDescription = null,
-                                        tint = MaterialTheme.colorScheme.onSurfaceVariant
-                                    )
-                                },
-                                trailingIcon = {
-                                    if (uiState.searchQuery.isNotBlank()) {
-                                        IconButton(
-                                            onClick = { viewModel.onSearchQueryChanged("") },
-                                            modifier = Modifier.testTag("cards_search_clear")
-                                        ) {
-                                            Icon(
-                                                Icons.Filled.Clear,
-                                                contentDescription = stringResource(R.string.action_close)
-                                            )
-                                        }
-                                    }
-                                },
-                                singleLine = true,
-                                shape = RoundedCornerShape(12.dp)
-                            )
-                        }
-
-                        // Summary & Counter header
-                        if (uiState.totalCount > 0) {
-                            item(key = "counter_header") {
-                                Row(
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .padding(horizontal = 4.dp, vertical = 2.dp),
-                                    horizontalArrangement = Arrangement.SpaceBetween,
-                                    verticalAlignment = Alignment.CenterVertically
-                                ) {
-                                    Text(
-                                        text = stringResource(
-                                            R.string.cards_showing_paged,
-                                            uiState.displayedCount,
-                                            uiState.totalCount
-                                        ),
-                                        style = MaterialTheme.typography.labelMedium,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                                    )
-                                }
-                            }
-                        }
-
-                        if (uiState.cards.isEmpty() && uiState.searchQuery.isNotBlank()) {
-                            item(key = "no_search_results") {
-                                Box(
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .padding(vertical = 32.dp),
-                                    contentAlignment = Alignment.Center
-                                ) {
-                                    Text(
-                                        text = stringResource(R.string.cards_no_search_results),
-                                        style = MaterialTheme.typography.bodyMedium,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                                    )
-                                }
-                            }
-                        }
-
                         items(uiState.cards, key = { it.id }) { card ->
                             CardRowItem(
                                 card = card,
                                 onEditClick = { cardToEdit = card },
                                 onDeleteClick = { cardToDelete = card }
                             )
-                        }
-
-                        // Pagination Load More button
-                        if (uiState.hasMoreCards) {
-                            item(key = "load_more_footer") {
-                                Box(
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .padding(vertical = 8.dp),
-                                    contentAlignment = Alignment.Center
-                                ) {
-                                    if (uiState.isLoadingMore) {
-                                        CircularProgressIndicator(
-                                            modifier = Modifier
-                                                .size(32.dp)
-                                                .testTag("loading_more_indicator")
-                                        )
-                                    } else {
-                                        OutlinedButton(
-                                            onClick = { viewModel.loadNextPage() },
-                                            modifier = Modifier
-                                                .fillMaxWidth(0.7f)
-                                                .testTag("load_more_cards_btn"),
-                                            shape = RoundedCornerShape(20.dp)
-                                        ) {
-                                            Text(stringResource(R.string.cards_load_more))
-                                        }
-                                    }
-                                }
-                            }
                         }
                     }
                 }

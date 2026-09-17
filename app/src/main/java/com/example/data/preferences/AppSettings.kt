@@ -2,7 +2,8 @@ package com.example.data.preferences
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.example.data.security.SecureKeyStorage
+import androidx.security.crypto.EncryptedSharedPreferences
+import androidx.security.crypto.MasterKeys
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -79,32 +80,30 @@ data class AppSettings(
     fun getEffectiveHttpMethod(): String = if (aiHttpMethod.isNotBlank()) aiHttpMethod.trim().uppercase() else aiProvider.defaultMethod
 }
 
-class AppSettingsManager(
-    context: Context,
-    val secureKeyStorage: SecureKeyStorage = SecureKeyStorage()
-) {
+class AppSettingsManager(context: Context) {
 
-    private val prefs: SharedPreferences =
-        context.getSharedPreferences("app_settings_prefs", Context.MODE_PRIVATE)
+    private val prefs: SharedPreferences = createPreferences(context)
+
+    private fun createPreferences(context: Context): SharedPreferences {
+        return try {
+            val masterKeyAlias = MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC)
+            EncryptedSharedPreferences.create(
+                "app_settings_encrypted_prefs",
+                masterKeyAlias,
+                context,
+                EncryptedSharedPreferences.PrefKeyEncryptionScheme.values()[0],
+                EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+            )
+        } catch (_: Throwable) {
+            context.getSharedPreferences("app_settings_prefs", Context.MODE_PRIVATE)
+        }
+    }
 
     private val _settingsFlow = MutableStateFlow(loadSettings())
     val settingsFlow: StateFlow<AppSettings> = _settingsFlow.asStateFlow()
 
     private fun loadSettings(): AppSettings {
         val providerId = prefs.getString("key_ai_provider", AiProvider.GEMINI.id) ?: AiProvider.GEMINI.id
-        val storedRawKey = prefs.getString("key_ai_api_key", "") ?: ""
-        val decryptedKey = if (storedRawKey.isNotBlank()) {
-            val decrypted = secureKeyStorage.decrypt(storedRawKey)
-            // If stored in legacy plaintext, automatically migrate to encrypted format in Keystore
-            if (!storedRawKey.startsWith("SEC_GCM:") && !storedRawKey.startsWith("OBF:")) {
-                val encrypted = secureKeyStorage.encrypt(storedRawKey)
-                prefs.edit().putString("key_ai_api_key", encrypted).apply()
-            }
-            decrypted
-        } else {
-            ""
-        }
-
         return AppSettings(
             dailyNewCardsLimit = prefs.getInt("key_new_limit", 20),
             dailyReviewCardsLimit = prefs.getInt("key_review_limit", 100),
@@ -121,7 +120,7 @@ class AppSettingsManager(
             aiEndpoint = prefs.getString("key_ai_endpoint", "") ?: "",
             aiHttpMethod = prefs.getString("key_ai_http_method", "POST") ?: "POST",
             aiModel = prefs.getString("key_ai_model", "") ?: "",
-            aiApiKey = decryptedKey,
+            aiApiKey = prefs.getString("key_ai_api_key", "") ?: "",
             aiCustomHeaders = prefs.getString("key_ai_custom_headers", "") ?: ""
         )
     }
@@ -201,10 +200,8 @@ class AppSettingsManager(
     }
 
     fun updateAiApiKey(apiKey: String) {
-        val trimmed = apiKey.trim()
-        val encrypted = if (trimmed.isNotBlank()) secureKeyStorage.encrypt(trimmed) else ""
-        prefs.edit().putString("key_ai_api_key", encrypted).apply()
-        _settingsFlow.value = _settingsFlow.value.copy(aiApiKey = trimmed)
+        prefs.edit().putString("key_ai_api_key", apiKey).apply()
+        _settingsFlow.value = _settingsFlow.value.copy(aiApiKey = apiKey)
     }
 
     fun updateAiCustomHeaders(headers: String) {

@@ -21,13 +21,11 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material.icons.filled.Alarm
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Error
 import androidx.compose.material.icons.filled.Key
-import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Psychology
 import androidx.compose.material.icons.filled.Refresh
@@ -36,6 +34,7 @@ import androidx.compose.material.icons.filled.Timer
 import androidx.compose.material.icons.filled.Vibration
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
+import androidx.compose.material.icons.filled.VolumeUp
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -247,7 +246,7 @@ fun SettingsScreen(
             item {
                 SettingsSectionCard(
                     title = stringResource(R.string.audio_settings_title),
-                    icon = Icons.AutoMirrored.Filled.VolumeUp
+                    icon = Icons.Filled.VolumeUp
                 ) {
                     // Auto-play front
                     Row(
@@ -346,7 +345,7 @@ fun SettingsScreen(
                             .height(48.dp)
                             .testTag("test_voice_button")
                     ) {
-                        Icon(Icons.AutoMirrored.Filled.VolumeUp, contentDescription = null)
+                        Icon(Icons.Filled.VolumeUp, contentDescription = null)
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(stringResource(R.string.setting_tts_test_btn))
                     }
@@ -650,30 +649,7 @@ fun SettingsScreen(
                             .testTag("input_ai_api_key")
                     )
 
-                    // Hardware KeyStore Security Badge
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(6.dp),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(top = 4.dp, bottom = 4.dp)
-                            .testTag("keystore_security_badge")
-                    ) {
-                        Icon(
-                            imageVector = Icons.Filled.Lock,
-                            contentDescription = null,
-                            modifier = Modifier.size(15.dp),
-                            tint = MaterialTheme.colorScheme.primary
-                        )
-                        Text(
-                            text = stringResource(R.string.security_keystore_secured),
-                            style = MaterialTheme.typography.labelSmall,
-                            color = MaterialTheme.colorScheme.primary,
-                            fontWeight = FontWeight.Medium
-                        )
-                    }
-
-                    Spacer(modifier = Modifier.height(6.dp))
+                    Spacer(modifier = Modifier.height(10.dp))
 
                     // Custom HTTP Headers (Optional)
                     OutlinedTextField(
